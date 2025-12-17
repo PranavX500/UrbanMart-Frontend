@@ -1,0 +1,285 @@
+/* UPDATED ProductPage.css WITH TOP DASHBOARD + URBANMART BRAND + FILTER PANEL */
+:root {
+  --accent: #00a86b;
+  --muted: #6b7280;
+  --card-bg: #fff;
+  --sidebar-bg: #ffffff;
+  --border: #e6e8eb;
+  --shadow: 0 8px 20px rgba(19, 24, 31, 0.06);
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui;
+  margin: 0;
+  color: #0f1724;
+  background: linear-gradient(180deg, #fbfdff, #ffffff);
+}
+
+/* ---------------- TOP DASHBOARD (B1 STYLE) ---------------- */
+.pm-wrapper {
+  width: 100%;
+}
+
+.pm-top-dashboard {
+  width: 100%;
+  background: #fff;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow);
+}
+
+.pm-top-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pm-brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-right: 14px;
+}
+
+.pm-top-link {
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #111;
+}
+.pm-top-link:hover {
+  background: #f3f6f8;
+}
+
+/* SEARCH BAR IN TOP NAV */
+.pm-top-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.pm-top-search input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+.pm-top-search button {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- MAIN GRID ---------------- */
+.pm-container {
+  max-width: 2000px;         /* wider layout */
+  margin: 0 auto;             /* remove top margin so sidebar moves up */
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 26px;                  /* slightly smaller gap */
+  padding: 0 16px;            /* less left/right padding */
+}
+
+
+/* ---------------- FILTER SIDEBAR ---------------- */
+.pm-filter-sidebar {
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 18px 24px;
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 120px;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+
+.pm-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.pm-filter-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pm-clear {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Filter Section */
+.pm-filter-block { margin-bottom: 24px; }
+.pm-filter-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.pm-filter-search {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+/* Category checklist */
+.pm-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.pm-category-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #0f1724;
+}
+.pm-category-option input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.pm-category-option span {
+  text-transform: capitalize;
+}
+
+/* ---------------- MAIN PRODUCT AREA ---------------- */
+.pm-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pm-headerrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pm-title { font-size: 28px; margin: 4px 0 0; }
+.pm-eyebrow { color: var(--muted); font-size: 12px; margin: 0; }
+
+.pm-filter input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  width: 180px;
+}
+
+.pm-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+.pm-btn-light {
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- PRODUCT GRID ---------------- */
+.pm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+.pm-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+  transition: 0.2s ease;
+}
+.pm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.pm-card-img {
+  background: #f8fafc;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+}
+.pm-card-img img {
+  max-width: 100%;
+  max-height: 160px;
+}
+
+.pm-card-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pm-card-info h3 {
+  font-size: 15px;
+  margin: 0;
+}
+.pm-price {
+  font-weight: 700;
+  color: var(--accent);
+}
+.pm-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pm-add {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 0;
+  background: #ff8a00;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 960px) {
+  .pm-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pm-filter-sidebar {
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+}
