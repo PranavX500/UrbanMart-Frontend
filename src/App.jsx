@@ -7,7 +7,7 @@ import ProductPage from './components/ProductPage'
 import ProductDetail from './components/ProductDetail'
 import Dashboard from "./components/Dashboard";
 import OrderSummary from './components/OrderSummary'
-import CartPage from "./components/CartPage";  
+import CartPage from "./components/CartPage";   // ✅ ADD THIS
 import OrdersPage from './components/OrdersPage'
 
 function App() {
@@ -26,9 +26,10 @@ function App() {
 
 
 
+          {/* ✅ ADD CART ROUTE */}
           <Route path="/cart" element={<CartPage />} />
 
-        
+          {/* Default */}
           <Route path="*" element={<Navigate to="/" replace />} />
           
         </Routes>
